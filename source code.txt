@@ -1,0 +1,106 @@
+from crop_selection import crop_selection
+from soil_management import soil_management
+from disease_identification import disease_identification
+from weather_forecast import weather_forecast
+from sustainable_farming_tips import sustainable_farming_tips
+
+def main():
+    while True:
+        print("------------------------------------------------")
+        print("Welcome to the Crop and Soil Management System")
+        print("------------------------------------------------")
+        print("Theme: Agriculture")
+        print("Goal: Zero Hunger")
+        print("------------------------------------------------\n")
+
+        print("1. Crop Selection")
+        print("2. Soil Management")
+        print("3. Disease Identification")
+        print("4. Weather Forecast")
+        print("5. Sustainable Farming Tips")
+        print("6. Exit")
+
+        choice = input("\nPlease select an option (1-6): ")
+
+        if choice == '1':
+            crop_selection()
+        elif choice == '2':
+            soil_management()
+        elif choice == '3':
+            disease_identification()
+        elif choice == '4':
+            weather_forecast()
+        elif choice == '5':
+            sustainable_farming_tips()
+        elif choice == '6':
+            print("\nThank you for using the Crop and Soil Management System!")
+            print("------------------------------------------------")
+            break
+        else:
+            print("\nInvalid option. Please try again.")
+            print("------------------------------------------------")
+
+if __name__ == "__main__":
+    main()
+
+
+
+def crop_selection():
+    region = input("Enter your region (e.g., North, South, East, West): ")
+    soil_type = input("Enter the type of soil (e.g., Sandy, Clay, Loamy): ")
+
+    # Example logic for crop recommendation based on region and soil type
+    if region.lower() == "south" and soil_type.lower() == "loamy":
+        print("\nRecommended Crops for your region and soil type:")
+        print("1. Wheat")
+        print("2. Rice")
+        print("3. Maize")
+    else:
+        print("\nNo specific recommendations available for your inputs.")
+    print("\n------------------------------------------------")
+
+
+def soil_management():
+    soil_ph = float(input("Enter your current soil pH level (e.g., 5.5, 6.0): "))
+
+    # Example logic for soil management recommendation
+    if soil_ph < 6.0:
+        print("\nRecommended soil treatment:")
+        print("- Add lime to increase soil alkalinity")
+        print("- Use organic compost to improve soil fertility")
+    else:
+        print("\nYour soil pH is within the optimal range.")
+    print("\n------------------------------------------------")
+
+
+def disease_identification():
+    crop_name = input("Enter crop name (e.g., Wheat, Rice): ")
+    symptoms = input("Enter visible symptoms (e.g., yellowing leaves, brown spots): ")
+
+    # Example logic for disease identification based on crop and symptoms
+    if crop_name.lower() == "wheat" and "yellowing leaves" in symptoms.lower():
+        print("\nPossible Disease: Leaf Rust")
+        print("Recommended Action:")
+        print("- Apply fungicide recommended for Leaf Rust")
+        print("- Ensure proper crop rotation")
+    else:
+        print("\nNo specific disease identified for your inputs.")
+    print("\n------------------------------------------------")
+
+
+def weather_forecast():
+    # Example weather data (static for simplicity)
+    print("\nFetching weather forecast for your region...\n")
+    print("Today's Weather:")
+    print("- Temperature: 28°C")
+    print("- Humidity: 65%")
+    print("- Rainfall: Moderate")
+    print("\n------------------------------------------------")
+
+
+def sustainable_farming_tips():
+    print("\nSustainable Farming Tips:")
+    print("1. Practice crop rotation to prevent soil depletion.")
+    print("2. Use organic fertilizers to maintain soil health.")
+    print("3. Implement drip irrigation to conserve water.")
+    print("\n------------------------------------------------")
